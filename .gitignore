@@ -1,0 +1,20 @@
+# IDE / Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS Junk Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# XAMPP / Local Server specific (kalau ada config)
+.htaccess
+error_log
+
+# Folder node_modules (jika suatu saat kamu pakai npm)
+node_modules/
+dist/
+
+parsiapan/
