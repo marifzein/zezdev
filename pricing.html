@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing & Solutions | ZezDev - Solusi Digital Terukur</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#db0335", // Merah ZezDev
+                        dark: "#0a0a0a", // Latar belakang gelap
+                        surface: "#1a1a1a", // Kartu gelap
+                        "on-surface": "#e2e2e2", // Teks abu-abu terang
+                    },
+                    fontFamily: {
+                        headline: ["Outfit"],
+                        body: ["Inter"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style>
+        /* Efek Dot Matrix Pattern (Hitam dengan Titik Putih) */
+        .bg-dots {
+            background-color: #0a0a0a;
+            background-image: radial-gradient(#ffffff 1px, transparent 1px);
+            background-size: 30px 30px;
+            background-attachment: fixed;
+            opacity: 0.3;
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+
+        .glow-red {
+            text-shadow: 0 0 15px rgba(219, 3, 53, 0.8);
+        }
+
+        .pricing-card {
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(219, 3, 53, 0.5);
+            box-shadow: 0 10px 40px rgba(219, 3, 53, 0.15);
+        }
+
+        /* Garis Data Trace di Samping (seperti referensi) */
+        .data-trace {
+            position: relative;
+        }
+        .data-trace::before {
+            content: '';
+            position: absolute;
+            left: -1rem;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background-color: rgba(219, 3, 53, 0.3);
+        }
+
+        /* Ikon Google Settings */
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 20;
+        }
+    </style>
+</head>
+<body class="bg-dark text-on-surface font-body antialiased selection:bg-primary/20 selection:text-white">
+    
+    <div class="bg-dots"></div>
+
+    <nav class="fixed top-0 w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/10 px-8 py-4 flex justify-between items-center relative">
+        <a href="index.html" class="text-2xl font-black tracking-tighter text-white font-headline">ZEZDEV</a>
+        <div class="hidden md:flex gap-8 items-center font-headline uppercase text-xs font-bold">
+            <a href="index.html" class="text-white/70 hover:text-white">Beranda</a>
+            <a href="portofolio.html" class="text-white/70 hover:text-white">Portofolio</a>
+            <a href="#" class="text-primary border-b-2 border-primary pb-1">Pricing</a>
+        </div>
+        <a href="index.html" class="bg-primary text-white px-6 py-2 font-headline uppercase text-xs font-black hover:bg-red-700 transition-all rounded-sm">Hubungi Kami</a>
+    </nav>
+
+    <main class="relative z-10 pt-32 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
+        
+        <div class="mb-20 text-center md:text-left">
+            <span class="font-headline text-xs font-bold tracking-[0.3em] uppercase text-primary mb-3 block">Service Architectures</span>
+            <h1 class="font-headline font-black text-5xl md:text-7xl uppercase tracking-tighter leading-none mb-6 text-white">
+                Paket Terukur untuk <br> <span class="text-primary glow-red">Pertumbuhan Optimal.</span>
+            </h1>
+            <p class="text-gray-400 max-w-2xl text-lg mx-auto md:mx-0">
+                Infrastruktur teknis yang direkayasa untuk presisi. Pilih tingkatan yang sesuai dengan tuntutan arsitektur bisnis Anda saat ini.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-1 bg-white/5 overflow-hidden rounded-sm border border-white/10">
+            
+            <div class="pricing-card bg-surface p-10 flex flex-col h-full border-r border-white/5 relative group">
+                <div class="mb-8 relative">
+                    <span class="font-headline text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Lapis 01 // Core</span>
+                    <h3 class="font-headline text-3xl font-bold mt-2 text-white">Basic Landing</h3>
+                    <p class="text-gray-500 text-sm mt-2 font-body">Promosi cepat, konversi tinggi, fokus pada perolehan leads.</p>
+                </div>
+                
+                <div class="mb-10 flex items-baseline gap-1 relative">
+                    <span class="text-4xl font-headline font-bold text-white">IDR 1.5M</span>
+                    <span class="text-gray-500 text-sm">/Project</span>
+                    <span class="absolute -top-5 left-0 text-[10px] text-gray-700 uppercase tracking-widest">Est. 2-4 Hari Kerja</span>
+                </div>
+
+                <div class="flex-grow space-y-4 mb-12 relative data-trace ml-4">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">ads_click</span>
+                        <span class="font-body text-sm text-on-surface">1 Halaman Fokus Closing</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">code</span>
+                        <span class="font-body text-sm text-on-surface">Desain Custom (Non-Template)</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">devices</span>
+                        <span class="font-body text-sm text-on-surface">Responsive (Mobile Ready)</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">bolt</span>
+                        <span class="font-body text-sm text-on-surface">Optimasi Kecepatan Ringan</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3 mb-10 text-xs text-gray-600 border-t border-white/5 pt-6">
+                    <p>✓ Bonus: Domain + Hosting + SSL (1 Thn)</p>
+                    <p>✓ Bonus: Copywriting Dasar + Konsultasi WA</p>
+                    <p class="text-gray-700">Max. 2x Revisi Desain</p>
+                </div>
+
+                <a href="https://wa.me/6285330048180?text=Halo%20ZezDev,%20saya%20tertarik%20dengan%20Paket%20BASIC%20Landing%20Page." 
+                   target="_blank"
+                   class="w-full bg-primary text-white py-4 font-headline font-bold uppercase tracking-widest text-xs hover:shadow-[0px_0px_20px_rgba(219,3,53,0.3)] transition-all text-center">
+                    Inisialisasi Core
+                </a>
+            </div>
+
+            <div class="pricing-card bg-[#1a1a1a] p-10 flex flex-col h-full relative group scale-100 md:scale-105 z-10 shadow-2xl shadow-primary/10 border border-primary/20">
+                <div class="absolute inset-0 bg-gradient-to-b from-primary/5 to-transparent pointer-events-none"></div>
+                
+                <div class="mb-8 relative">
+                    <div class="flex justify-between items-start">
+                        <span class="font-headline text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Lapis 02 // Pro</span>
+                        <span class="bg-primary text-white text-[9px] px-2 py-1 font-bold tracking-tighter rounded-full">BEST SELLER 🔥</span>
+                    </div>
+                    <h3 class="font-headline text-3xl font-bold mt-2 text-white">Company Profile</h3>
+                    <p class="text-gray-500 text-sm mt-2 font-body">Tampil profesional, dipercaya, & performa tinggi.</p>
+                </div>
+                
+                <div class="mb-10 flex items-baseline gap-1 relative">
+                    <span class="text-4xl font-headline font-bold text-white">IDR 2.5M</span>
+                    <span class="text-gray-500 text-sm">/Project</span>
+                    <span class="absolute -top-5 left-0 text-[10px] text-gray-700 uppercase tracking-widest">Est. 3-5 Hari Kerja</span>
+                </div>
+
+                <div class="flex-grow space-y-4 mb-12 relative data-trace ml-4">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">stacks</span>
+                        <span class="font-body text-sm text-on-surface">5–6 Halaman Struktur Lengkap</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">speed</span>
+                        <span class="font-body text-sm text-on-surface">Performa Cepat (Tanpa Plugin Berat)</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">search</span>
+                        <span class="font-body text-sm text-on-surface">Struktur SEO Dasar</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">security</span>
+                        <span class="font-body text-sm text-on-surface">Keamanan Premium & Backup Berkala</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">mail</span>
+                        <span class="font-body text-sm text-on-surface">Email Domain (info@bisnis.com)</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3 mb-10 text-xs text-gray-600 border-t border-white/5 pt-6">
+                    <p>✓ Semua Bonus BASIC + Premium Images</p>
+                    <p>✓ Maintenance & Bug Fixing (1 Tahun)</p>
+                    <p class="text-gray-700">Max. 3x Revisi Desain</p>
+                </div>
+
+                <a href="https://wa.me/6285330048180?text=Halo%20ZezDev,%20saya%20tertarik%20dengan%20Paket%20STANDARD%20Company%20Profile." 
+                   target="_blank"
+                   class="w-full bg-primary text-white py-4 font-headline font-bold uppercase tracking-widest text-xs hover:shadow-[0px_0px_24px_rgba(219,3,53,0.4)] transition-all relative z-10 text-center">
+                    Deploy Advanced
+                </a>
+            </div>
+
+            <div class="pricing-card bg-surface p-10 flex flex-col h-full border-l border-white/5 relative group">
+                <div class="mb-8 relative">
+                    <span class="font-headline text-[10px] uppercase tracking-[0.2em] text-primary font-bold">Lapis 03 // Enterprise</span>
+                    <h3 class="font-headline text-3xl font-bold mt-2 text-white">Custom System</h3>
+                    <p class="text-gray-500 text-sm mt-2 font-body">Sistem rekayasa khusus, E-Commerce, & otomatisasi bisnis.</p>
+                </div>
+                
+                <div class="mb-10 flex items-baseline gap-1 relative">
+                    <span class="text-gray-500 text-sm">Mulai</span>
+                    <span class="text-4xl font-headline font-bold text-white">IDR 4M</span>
+                    <span class="absolute -top-5 left-0 text-[10px] text-gray-700 uppercase tracking-widest">Waktu Menyesuaikan Fitur</span>
+                </div>
+
+                <div class="flex-grow space-y-4 mb-12 relative data-trace ml-4">
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">settings_ethernet</span>
+                        <span class="font-body text-sm text-on-surface">Semua Fitur STANDARD +</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">shopping_cart</span>
+                        <span class="font-body text-sm text-on-surface">E-Commerce / Katalog Produk</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">credit_card</span>
+                        <span class="font-body text-sm text-on-surface">Integrasi Pembayaran (QRIS / Gateway)</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">dashboard</span>
+                        <span class="font-body text-sm text-on-surface">Dashboard Admin Sederhana</span>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <span class="material-symbols-outlined text-primary text-sm mt-1">database_schema</span>
+                        <span class="font-body text-sm text-on-surface">Database Rapi & Scalable</span>
+                    </div>
+                </div>
+
+                <div class="space-y-3 mb-10 text-xs text-gray-600 border-t border-white/5 pt-6">
+                    <p>✓ Scope Fitur Disepakati di Awal</p>
+                    <p class="text-gray-700">Harga Menyesuaikan Kompleksitas</p>
+                </div>
+
+                <a href="https://wa.me/6285330048180?text=Halo%20ZezDev,%20saya%20tertarik%20dengan%20Paket%20PREMIUM%20Custom%20System/Ecommerce." 
+                   target="_blank"
+                   class="w-full bg-primary text-white py-4 font-headline font-bold uppercase tracking-widest text-xs hover:shadow-[0px_0px_20px_rgba(219,3,53,0.3)] transition-all text-center">
+                    Inisiasi Enterprise
+                </a>
+            </div>
+
+        </div>
+
+        <div class="mt-20 flex flex-col md:flex-row justify-between items-start gap-12 p-12 bg-surface/50 backdrop-blur-sm border-l-4 border-primary rounded-sm relative">
+            <div class="max-w-xl">
+                <h4 class="font-headline text-2xl font-bold mb-4 text-white">Mencari solusi spesifik?</h4>
+                <p class="font-body text-gray-400">
+                    Anda bisa konsultasi mendalam dengan tim ahli kami guna memetakan kebutuhan infrastruktur digital Anda. Kami tidak hanya membangun situs, kami merekayasa solusi pertumbuhan.
+                </p>
+            </div>
+            <div class="flex flex-col gap-4 w-full md:w-auto">
+                <a href="https://wa.me/6285330048180?text=Halo%20Tim%20ZezDev,%20saya%20butuh%20konsultasi%20teknis%20untuk%20proyek%20saya." 
+                   target="_blank" 
+                   class="p-6 bg-surface flex items-center gap-4 group cursor-pointer hover:bg-zinc-900 transition-colors border border-white/5">
+                    <span class="material-symbols-outlined text-primary scale-125" data-icon="support_agent">support_agent</span>
+                    <div>
+                        <p class="font-headline text-[10px] uppercase tracking-widest text-gray-500">Hubungi Tim Kami</p>
+                        <p class="font-headline font-bold text-lg text-white">Support Teknis 24/7</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="relative z-10 py-12 border-t border-white/10 text-center">
+        <p class="text-gray-600 text-xs tracking-widest uppercase font-headline">© 2026 ZEZDEV DIGITAL AGENCY // ENGINEERED FOR PRECISION</p>
+    </footer>
+
+</body>
+</html>
