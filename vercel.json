@@ -2,8 +2,7 @@
   "cleanUrls": true,
   "rewrites": [
     { "source": "/portofolio", "destination": "/portfolio.html" },
-    { "source": "/pricing", "destination": "/pricing.html" },
-    { "source": "/layanan", "destination": "/layanan.html" },
+    { "source": "/layanan", "destination": "/pricing.html" },
     { "source": "/kontak", "destination": "/kontak.html" }
   ]
 }
