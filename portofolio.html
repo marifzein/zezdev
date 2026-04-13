@@ -105,22 +105,19 @@
   <body class="bg-surface text-dark font-body antialiased relative selection:bg-primary/10 selection:text-primary">
     <div class="bg-dots"></div>
 
-    <nav class="fixed top-0 w-full z-50 bg-[#db0335] shadow-lg px-6 py-4 flex justify-between items-center relative">
+    <nav class="fixed top-0 w-full z-50 bg-[#db0335] shadow-lg px-6 py-4 flex justify-between items-center">
       <a href="/" class="text-2xl font-black tracking-tighter text-white font-headline">ZEZDEV</a>
 
-      <div class="hidden md:flex gap-8 items-center font-headline uppercase text-xs font-bold text-white/90">
-        <div class="hidden md:flex gap-4 items-center font-headline uppercase text-[11px] font-bold">
-        
-        <a
-          href="/"
-          class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center"
-        >
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-4 items-center font-headline uppercase text-[11px] font-bold">
+        <a href="/" class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center">
           <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
             >Beranda</span
           >
           <span
             class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
           ></span>
+        </a>
 
         <a
           href="/layanan"
@@ -133,10 +130,11 @@
             class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
           ></span>
         </a>
-        </a>
+
         <a href="#" class="relative px-5 py-1.5 bg-white text-[#db0335] flex items-center justify-center">
           <span class="relative z-10">Portofolio</span>
         </a>
+
         <a href="/about" class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center">
           <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
             >Tentang</span
@@ -145,21 +143,63 @@
             class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
           ></span>
         </a>
-
         <a
-          href="https://wa.me/6285330048180"
+          href="https://wa.me/6285330048180?text=Halo%20ZezDev,%20saya%20tertarik%20ingin%20diskusi..."
           target="_blank"
-          class="bg-white text-[#db0335] px-5 py-2.5 font-headline uppercase text-xs font-black rounded-sm hover:bg-gray-100 transition-all text-center"
+          class="ml-2 bg-zinc-900 text-[#ffffff] px-5 py-2 font-black rounded-sm hover:text-[#db0335] transition-all active:scale-95"
         >
-          Hubungi Kami
+          Kontak
         </a>
       </div>
       <div
         class="absolute bottom-0 left-0 w-full h-[8px] bg-gradient-to-r from-[#db0335] via-[#1a1a1a] to-[#db0335]"
       ></div>
+      <!-- Hamburger -->
+      <button id="hamburger" class="md:hidden text-white text-xl focus:outline-none leading-none z-10">☰</button>
     </nav>
 
-    <main class="relative z-10 pt-12 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
+    <!-- Side Menu Mobile - Versi Putih + Aksen Merah -->
+    <div
+      id="sideMenu"
+      class="fixed top-0 left-[-100%] w-60 h-full bg-white z-[100] transition-all duration-500 ease-in-out shadow-2xl md:hidden border-l-8 border-[#db0335]"
+    >
+      <div class="p-8">
+        <div class="flex justify-between items-center mb-12">
+          <a href="/" class="text-xl font-black tracking-tighter text-[#db0335] font-headline">ZEZDEV</a>
+          <button
+            id="closeMenu"
+            class="text-[#db0335] text-base text-bold leading-none font-light hover:text-red-700 transition"
+          >
+            <b>✕</b>
+          </button>
+        </div>
+
+        <div class="flex flex-col gap-8 text-[#1a1a1a] font-headline uppercase tracking-wider text-sm">
+          <a href="#" class="hover:text-[#db0335] transition">Beranda</a>
+          <a href="/layanan" class="hover:text-[#db0335] transition">Layanan</a>
+          <a href="/portofolio" class="hover:text-[#db0335] transition">Portofolio</a>
+          <a href="#tentang" class="hover:text-[#db0335] transition">Tentang</a>
+        </div>
+
+        <div class="mt-16">
+          <!-- <a
+            href="https://wa.me/6285330048180?text=Halo%20ZezDev,%20saya%20tertarik%20ingin%20diskusi..."
+            target="_blank"
+            class="block mx-auto max-w-[160px] bg-[#db0335] text-white text-center py-3 uppercase text-sm font-black rounded-sm hover:bg-red-700 transition-all"
+          > -->
+          <a
+            href="https://wa.me/6285330048180?text=Halo%20ZezDev,%20saya%20tertarik%20ingin%20diskusi..."
+            target="_blank"
+            class="block mx-auto max-w-[160px] bg-subprime text-white text-center py-3 uppercase text-sm ffont-black rounded-sm hover:bg-[#000000] transition-all"
+          >
+            Kontak
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <main class="pt-28 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
+      <!-- <main class="relative z-10 pt-12 pb-24 px-6 md:px-8 max-w-7xl mx-auto"> -->
       <!-- <main class="relative overflow-hidden bg-white"> -->
       <!-- <div
         class="absolute top-20 left-[5%] text-zinc-500 font-mono text-sm floating-code hidden md:block"
