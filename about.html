@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tentang - ZezDev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#db0335",
+              dark: "#0a0a0a",
+            },
+            fontFamily: {
+              headline: ["Inter", "sans-serif"],
+              body: ["Roboto", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto:wght@300;400&display=swap");
+      .bg-dark {
+        background-color: #0a0a0a;
+      }
+    </style>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-white font-body text-zinc-800">
+    <nav class="fixed top-0 w-full z-50 bg-[#db0335] shadow-lg px-6 py-4 flex justify-between items-center relative">
+      <a href="/" class="text-2xl font-black tracking-tighter text-white font-headline">ZEZDEV</a>
+
+      <div class="hidden md:flex gap-8 items-center font-headline uppercase text-xs font-bold text-white/90">
+        <a href="/" class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center">
+          <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
+            >Beranda</span
+          >
+          <span
+            class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
+          ></span>
+
+          <a
+            href="/layanan"
+            class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center"
+          >
+            <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
+              >Layanan</span
+            >
+            <span
+              class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
+            ></span>
+          </a>
+        </a>
+        <a
+          href="/portofolio"
+          class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center"
+        >
+          <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
+            >Portofolio</span
+          >
+          <span
+            class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
+          ></span>
+        </a>
+        <a href="#" class="relative px-5 py-1.5 bg-white text-[#db0335] flex items-center justify-center">
+          <span class="relative z-10">Tentang</span>
+        </a>
+
+        <a
+          href="https://wa.me/6285330048180"
+          target="_blank"
+          class="bg-white text-[#db0335] px-5 py-2.5 font-headline uppercase text-xs font-black rounded-sm hover:bg-gray-100 transition-all text-center"
+        >
+          Hubungi Kami
+        </a>
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-full h-[8px] bg-gradient-to-r from-[#db0335] via-[#1a1a1a] to-[#db0335]"
+      ></div>
+    </nav>
+
+    <section class="py-24 px-8 max-w-7xl mx-auto">
+      <h1 class="font-headline text-6xl md:text-8xl font-black uppercase tracking-tighter mb-12">
+        DI BALIK <br />
+        <span class="text-primary drop-shadow-[0_0_15px_rgba(219,3,53,0.4)]">LAYAR.</span>
+      </h1>
+
+      <div class="grid md:grid-cols-2 gap-16 items-start">
+        <div class="space-y-6">
+          <h2
+            class="font-headline text-sm font-bold tracking-[0.3em] uppercase text-primary border-l-4 border-primary pl-4"
+          >
+            About ZEZDEV
+          </h2>
+          <p class="text-zinc-600 text-lg leading-relaxed max-w-full">
+            ZezDev merupakan representasi dari pendekatan kerja yang mengedepankan kesederhanaan, ketepatan, dan
+            fungsionalitas. Di baliknya, M. Arif Zein mengembangkan berbagai solusi digital—mulai dari
+            <i>website, landing page</i>, hingga <i>aplikasi berbasis web</i> yang dirancang sesuai kebutuhan
+            masing-masing pengguna.
+          </p>
+          <p class="text-zinc-600 text-lg leading-relaxed max-w-full">
+            Setiap proyek dikerjakan dengan perhatian pada detail, baik dari sisi <i>tampilan</i> maupun
+            <i>performa</i>. Tujuannya sederhana, berusaha menghadirkan solusi digital yang dapat digunakan dengan
+            nyaman dan mendukung aktivitas secara berkelanjutan.
+          </p>
+        </div>
+
+        <!-- <div class="bg-dark p-8 rounded-2xl relative overflow-hidden group"> -->
+        <div class="bg-slate-100 p-8 rounded-2xl relative overflow-hidden group shadow-2xl">
+          <div
+            class="absolute -top-24 -right-24 w-64 h-64 rounded-full blur-3xl group-hover:bg-black/10 transition-colors"
+          ></div>
+          <!-- <div
+            class="absolute -top-24 -right-24 w-64 h-64 bg-primary/20 rounded-full blur-3xl group-hover:bg-primary/30 transition-colors"
+          ></div> -->
+
+          <div class="relative z-10 text-slate-600">
+            <h3 class="font-headline text-2xl font-black italic mb-1">ARIF ZEIN</h3>
+            <p class="text-primary font-bold text-xs tracking-widest uppercase mb-8">Full-stack Developer</p>
+
+            <div class="space-y-4 text-sm text-zinc-800">
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined"> speaker_phone </span>
+
+                <a href="tel:085330048180" class="hover:text-white transition-colors">085330048180</a>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined"> mark_email_unread </span>
+                <a href="mailto:marifzein@gmail.com" class="hover:text-white transition-colors">marifzein@gmail.com</a>
+              </div>
+              <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined"> cloud </span>
+                <a href="https://zezdev.my.id" target="_blank" class="hover:text-white transition-colors"
+                  >zezdev.my.id</a
+                >
+              </div>
+            </div>
+
+            <div class="mt-10 pt-6 border-t border-zinc-500">
+              <p class="text-[11px] font-bold text-primary uppercase tracking-widest">Skill</p>
+              <p class="text-xs mt-2 text-zinc-500">Web Design • Web App • Custom System • API Architecture</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="relative bg-dark text-white py-12 px-8">
+      <div
+        class="absolute top-0 left-0 w-full h-[8px] bg-gradient-to-r from-black via-[#470015] via-[#db0335] via-[#470015] to-black"
+      ></div>
+
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="font-black text-2xl font-headline italic uppercase">ZEZDEV</div>
+        <span class="text-gray-400 text-xs font-body">M Arif Zein • Solusi Digital • Designer • Developer</span>
+        <div class="text-gray-400 text-xs font-body">© 2026 ZezDev</div>
+        <div class="flex gap-6">
+          <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+          <a
+            href="https://api.whatsapp.com/send?phone=6285330048180"
+            target="_blank"
+            class="text-gray-400 hover:text-white"
+            >WhatsApp</a
+          >
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

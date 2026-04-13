@@ -1,192 +1,430 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portofolio | ZezDev - Solusi Digital Modern</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Outfit:wght@100..900&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <script id="tailwind-config">
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: "#db0335", // Merah ZezDev
-                        dark: "#1a1a1a", // Teks abu-abu pekat (untuk latar terang)
-                        cardDark: "#0a0a0a", // Hitam pekat untuk kartu
-                        surface: "#ffffff", // Latar halaman putih
-                    },
-                    fontFamily: {
-                        headline: ["Outfit"],
-                        body: ["Inter"],
-                    },
-                },
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#db0335", // Merah ZezDev
+              dark: "#1a1a1a", // Teks abu-abu pekat (untuk latar terang)
+              cardDark: "#0a0a0a", // Hitam pekat untuk kartu
+              surface: "#ffffff", // Latar halaman putih
             },
-        };
+            fontFamily: {
+              headline: ["Outfit"],
+              body: ["Inter"],
+            },
+          },
+        },
+      };
     </script>
     <style>
-        /* Efek Dot Matrix Pattern (Putih dengan Titik Hitam) */
-        .bg-dots {
-            background-color: #ffffff;
-            background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
-            background-size: 30px 30px;
-            background-attachment: fixed;
-            opacity: 0.15;
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-        }
+      /* Efek Dot Matrix Pattern (Putih dengan Titik Hitam) */
+      .bg-dots {
+        background-color: #ffffff;
+        background-image: radial-gradient(#1a1a1a 1px, transparent 1px);
+        background-size: 30px 30px;
+        background-attachment: fixed;
+        opacity: 0.15;
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+      }
 
-        .glow-red {
-            text-shadow: 0 0 10px rgba(219, 3, 53, 0.6), 0 0 20px rgba(219, 3, 53, 0.3);
-        }
+      .glow-red {
+        text-shadow:
+          0 0 10px rgba(219, 3, 53, 0.6),
+          0 0 20px rgba(219, 3, 53, 0.3);
+      }
 
-        /* Kartu dengan shadow lembut untuk latar terang */
-        .portfolio-card {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(255, 255, 255, 0.05); /* Border sangat tipis */
-            background-color: #0a0a0a; /* Hitam pekat */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow lembut */
-        }
+      /* Kartu dengan shadow lembut untuk latar terang */
+      .portfolio-card {
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid rgba(255, 255, 255, 0.05); /* Border sangat tipis */
+        background-color: #0a0a0a; /* Hitam pekat */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow lembut */
+      }
 
-        .portfolio-card:hover {
-            transform: translateY(-10px);
-            border-color: rgba(219, 3, 53, 0.4); /* Border merah saat hover */
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); /* Shadow lebih gelap saat hover */
+      .portfolio-card:hover {
+        transform: translateY(-10px);
+        border-color: rgba(219, 3, 53, 0.4); /* Border merah saat hover */
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4); /* Shadow lebih gelap saat hover */
+      }
+      /* new animasi */
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
         }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0% {
+          transform: translateY(0px) rotate(0deg);
+        }
+        50% {
+          transform: translateY(-20px) rotate(2deg);
+        }
+        100% {
+          transform: translateY(0px) rotate(0deg);
+        }
+      }
+
+      .animate-fade-up {
+        opacity: 0;
+        animation: fadeInUp 0.8s ease forwards;
+      }
+
+      .delay-1 {
+        animation-delay: 0.2s;
+      }
+      .delay-2 {
+        animation-delay: 0.4s;
+      }
+
+      .floating-code {
+        animation: float 6s ease-in-out infinite;
+        pointer-events: none;
+        user-select: none;
+      }
     </style>
-</head>
-<body class="bg-surface text-dark font-body antialiased relative selection:bg-primary/10 selection:text-primary">
-    
+  </head>
+  <body class="bg-surface text-dark font-body antialiased relative selection:bg-primary/10 selection:text-primary">
     <div class="bg-dots"></div>
 
     <nav class="fixed top-0 w-full z-50 bg-[#db0335] shadow-lg px-6 py-4 flex justify-between items-center relative">
-        <a href="/" class="text-2xl font-black tracking-tighter text-white font-headline">ZEZDEV</a>
+      <a href="/" class="text-2xl font-black tracking-tighter text-white font-headline">ZEZDEV</a>
+
+      <div class="hidden md:flex gap-8 items-center font-headline uppercase text-xs font-bold text-white/90">
+        <div class="hidden md:flex gap-4 items-center font-headline uppercase text-[11px] font-bold">
         
-        <div class="hidden md:flex gap-8 items-center font-headline uppercase text-xs font-bold text-white/90">
-            <a href="/" class="hover:text-white transition-colors">Beranda</a>
-            <a href="/layanan" class="hover:text-white transition-colors">Layanan</a>
-            <a href="/portofolio" class="hover:text-white transition-colors border-b-2 border-white pb-1">Portofolio</a>
-            <a href="#tentang" class="hover:text-white transition-colors">Tentang</a>
-            <a href="https://wa.me/6285330048180" 
-               target="_blank"
-               class="bg-white text-[#db0335] px-5 py-2.5 font-headline uppercase text-xs font-black rounded-sm hover:bg-gray-100 transition-all text-center">
-                Hubungi Kami
-            </a>
-        </div>
+        <a
+          href="/"
+          class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center"
+        >
+          <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
+            >Beranda</span
+          >
+          <span
+            class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
+          ></span>
+
+        <a
+          href="/layanan"
+          class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center"
+        >
+          <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
+            >Layanan</span
+          >
+          <span
+            class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
+          ></span>
+        </a>
+        </a>
+        <a href="#" class="relative px-5 py-1.5 bg-white text-[#db0335] flex items-center justify-center">
+          <span class="relative z-10">Portofolio</span>
+        </a>
+        <a href="/about" class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center">
+          <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
+            >Tentang</span
+          >
+          <span
+            class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
+          ></span>
+        </a>
+        
+        <a
+          href="https://wa.me/6285330048180"
+          target="_blank"
+          class="bg-white text-[#db0335] px-5 py-2.5 font-headline uppercase text-xs font-black rounded-sm hover:bg-gray-100 transition-all text-center"
+        >
+          Hubungi Kami
+        </a>
+      </div>
+      <div
+        class="absolute bottom-0 left-0 w-full h-[8px] bg-gradient-to-r from-[#db0335] via-[#1a1a1a] to-[#db0335]"
+      ></div>
     </nav>
 
-    <main class="relative z-10 pt-32 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
-        
-        <div class="mb-20 text-center md:text-left relative z-20">
-            <h1 class="font-headline font-black text-6xl md:text-8xl uppercase tracking-tighter leading-none mb-4 text-dark relative z-10">
-                Karya <br />
-                <span class="text-primary glow-red">Terpilih.</span>
-            </h1>
-            <p class="text-zinc-600 max-w-xl text-lg mx-auto md:mx-0 relative z-10">
-                Dari web app hingga company profile, setiap karya kami rancang dengan desain yang custom serta performa yang dioptimalkan.
-            </p>
-        </div>
+    <main class="relative z-10 pt-12 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
+      <!-- <main class="relative overflow-hidden bg-white"> -->
+      <!-- <div
+        class="absolute top-20 left-[5%] text-zinc-500 font-mono text-sm floating-code hidden md:block"
+        style="animation-delay: 0s"
+      >
+        <pre>func (api *Server) Start() {<br>  log.Printf("Server running...")<br>}</pre>
+      </div>
+      <div
+        class="absolute top-40 right-[10%] text-zinc-700 font-mono text-xs floating-code"
+        style="animation-delay: 1s"
+      >
+        <pre>SELECT * FROM projects<br>WHERE status = 'deployed';</pre>
+      </div>
+      <div
+        class="absolute bottom-20 left-[15%] text-zinc-100 font-mono text-xs floating-code"
+        style="animation-delay: 2s"
+      >
+        <pre>const meta = {<br>  framework: "HTMX",<br>  style: "Tailwind"<br>};</pre>
+      </div> -->
 
-        <div class="mb-24 relative z-20">
-            <h2 class="font-headline text-sm font-bold tracking-[0.3em] uppercase text-primary mb-10 border-l-4 border-primary pl-4">
-                Application Projects
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                
-                <a href="https://hrd-demo-peach.vercel.app/" target="_blank" class="portfolio-card group overflow-hidden rounded-sm block h-full">
-                    <div class="aspect-video bg-zinc-900 overflow-hidden">
-                        <img src="img/utsg.webp" alt="HRD UTSG" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
-                    </div>
-                    <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-widest text-primary font-bold">Full-Stack App</span>
-                        <h3 class="text-2xl font-headline font-bold mt-2 text-white">HRD UTSG System</h3>
-                        <p class="text-zinc-400 text-sm mt-4">Sistem manajemen SDM terintegrasi untuk United Tractors Semen Gresik.</p>
-                    </div>
-                </a>
+      <div class="mb-20 text-center md:text-left relative z-20">
+        <h1
+          class="font-headline font-black text-6xl md:text-8xl uppercase tracking-tighter leading-none mb-4 text-dark relative z-10"
+        >
+          Karya <br />
+          <!-- <span class="text-zinc-500 glow-red">Terpilih.</span> -->
+          <!-- <span class="text-zinc-500 drop-shadow-md">Terpilih.</span> -->
+          <span class="text-zinc-400 [text-shadow:_0_5px_10px_rgba(0,0,0,0.7)]">TERPILIH.</span>
+        </h1>
+        <p class="text-zinc-600 max-w-full text-lg mx-auto md:mx-0 relative z-10">
+          <!-- Dari web app hingga company profile, setiap karya kami rancang dengan desain yang custom serta performa yang dioptimalkan. -->
+          Didevelop secara khusus dengan tampilan yang selaras dengan identitas dan karakter bisnis/institusi Anda.
+          Didukung performa yang optimal untuk memastikan pengalaman yang nyaman di berbagai perangkat.
+        </p>
+      </div>
 
-                <a href="https://ekspedisi.vercel.app/" target="_blank" class="portfolio-card group overflow-hidden rounded-sm block h-full">
-                    <div class="aspect-video bg-zinc-900 overflow-hidden">
-                        <img src="img/jastip.webp" alt="Jastip App" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100" />
-                    </div>
-                    <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-widest text-primary font-bold">Logistics Solution</span>
-                        <h3 class="text-2xl font-headline font-bold mt-2 text-white">Jastip & Ekspedisi App</h3>
-                        <p class="text-zinc-400 text-sm mt-4">Platform pelacakan dan manajemen logistik pengiriman barang secara real-time.</p>
-                    </div>
-                </a>
+      <div class="mb-24 relative z-20">
+        <h2
+          class="font-headline text-sm font-bold tracking-[0.3em] uppercase text-primary mb-4 border-l-4 border-primary pl-4"
+        >
+          Aplikasi berbasis Web
+        </h2>
+        <p class="text-zinc-600 max-w-full text-l mx-auto md:mx-0 relative z-10 mb-6">
+          Aplikasi berbasis web yang kami kembangkan dirancang untuk membantu operasional bisnis berjalan lebih
+          terstruktur dan efisien. Mulai dari sistem internal hingga platform yang melibatkan pengguna, setiap solusi
+          disesuaikan dengan kebutuhan spesifik. Kami berfokus pada kestabilan sistem, kemudahan penggunaan, serta
+          performa yang optimal, sehingga aplikasi dapat digunakan dengan nyaman dalam jangka panjang.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <a
+            href="https://hrd-demo-peach.vercel.app/"
+            target="_blank"
+            class="portfolio-card group overflow-hidden rounded-sm block h-full"
+          >
+            <div class="aspect-video bg-zinc-900 overflow-hidden">
+              <img
+                src="img/utsg.webp"
+                alt="HRD UTSG"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+              />
             </div>
-        </div>
-
-        <div class="relative z-20">
-            <h2 class="font-headline text-sm font-bold tracking-[0.3em] uppercase text-primary mb-10 border-l-4 border-primary pl-4">
-                Web Development
-            </h2>
-            <div class="grid grid-cols-1 gap-12">
-                
-                <a href="https://cantilever-lovat.vercel.app/" target="_blank" class="portfolio-card group overflow-hidden rounded-sm block">
-                    <div class="aspect-video bg-zinc-900 overflow-hidden">
-                        <img src="img/cantilever.webp" alt="Cantilever" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100" />
-                    </div>
-                    <div class="p-8 flex flex-col md:flex-row justify-between md:items-center gap-4">
-                        <div>
-                            <span class="text-[10px] uppercase tracking-widest text-primary font-bold">Featured Project // Corporate</span>
-                            <h3 class="text-3xl md:text-4xl font-headline font-bold mt-2 text-white">Cantilever Group Kontraktor</h3>
-                        </div>
-                        <div class="flex gap-2">
-                            <span class="px-3 py-1 border border-white/10 text-white text-[10px] uppercase bg-white/5 rounded-full">Tailwind CSS</span>
-                            <span class="px-3 py-1 border border-white/10 text-white text-[10px] uppercase bg-white/5 rounded-full">UI/UX Design</span>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="https://cqj-five.vercel.app/blueprint/" target="_blank" class="portfolio-card group overflow-hidden rounded-sm block">
-                    <div class="aspect-video bg-zinc-900 overflow-hidden">
-                        <img src="img/cqj.webp" alt="PCQJ" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100" />
-                    </div>
-                    <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-widest text-primary font-bold">Islamic Foundation</span>
-                        <h3 class="text-3xl font-headline font-bold mt-2 text-white">Pondok Cahaya Qur'an Jamprong</h3>
-                    </div>
-                </a>
-
-                <a href="https://cintacake.vercel.app/" target="_blank" class="portfolio-card group overflow-hidden rounded-sm block">
-                    <div class="aspect-video bg-zinc-900 overflow-hidden">
-                        <img src="img/cintacake.webp" alt="Cinta Cake" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100" />
-                    </div>
-                    <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-widest text-primary font-bold">E-Commerce / Catalog</span>
-                        <h3 class="text-3xl font-headline font-bold mt-2 text-white">Cinta Cake</h3>
-                    </div>
-                </a>
-
-                <a href="https://puskab-demo.vercel.app/" target="_blank" class="portfolio-card group overflow-hidden rounded-sm block">
-                    <div class="aspect-video bg-zinc-900 overflow-hidden">
-                        <img src="img/puskab.webp" alt="Puskab" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100" />
-                    </div>
-                    <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-widest text-primary font-bold">Institutional</span>
-                        <h3 class="text-3xl font-headline font-bold mt-2 text-white">Puskab System</h3>
-                    </div>
-                </a>
-
-                <a href="https://sppgbojonegoro.vercel.app/" target="_blank" class="portfolio-card group overflow-hidden rounded-sm block">
-                    <div class="aspect-video bg-zinc-900 overflow-hidden">
-                        <img src="img/sppgbjn.webp" alt="SPPG" class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100" />
-                    </div>
-                    <div class="p-8">
-                        <span class="text-[10px] uppercase tracking-widest text-primary font-bold">Community</span>
-                        <h3 class="text-3xl font-headline font-bold mt-2 text-white">SPPG Bojonegoro</h3>
-                    </div>
-                </a>
-
+            <div class="p-8">
+              <span class="text-[11px] uppercase tracking-widest text-primary font-bold"
+                >Aplikasi HRD &amp; Project Management</span
+              >
+              <h3 class="text-2xl font-headline font-bold mt-2 text-white">HRD UTSG System</h3>
+              <p class="text-zinc-400 text-sm mt-4">
+                Sistem manajemen SDM terintegrasi untuk
+                <span class="text-[#E8B100]">United Tractors Semen Gresik.</span>
+              </p>
+              <div class="flex gap-2">
+                <span class="px-3 py-1 border border-white/10 text-white text-[11px] uppercase bg-white/5 rounded-full"
+                  >Golang - HTMX</span
+                >
+                <span class="px-3 py-1 border border-white/10 text-white text-[11px] uppercase bg-white/5 rounded-full"
+                  >Postgres</span
+                >
+              </div>
             </div>
+          </a>
+
+          <!-- <a
+            href="https://ekspedisi.vercel.app/"
+            target="_blank"
+            class="portfolio-card group overflow-hidden rounded-sm block h-full"
+          > -->
+          <a
+            href="https://fipman.com/jastip/"
+            target="_blank"
+            class="portfolio-card group overflow-hidden rounded-sm block h-full"
+          >
+            <div class="aspect-video bg-zinc-900 overflow-hidden">
+              <img
+                src="img/jastip.webp"
+                alt="Jastip App"
+                class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-90 group-hover:opacity-100"
+              />
+            </div>
+            <div class="p-8">
+              <span class="text-[11px] uppercase tracking-widest text-primary font-bold">Logistics Solution</span>
+              <h3 class="text-2xl font-headline font-bold mt-2 text-white">Jastip & Ekspedisi App</h3>
+              <p class="text-zinc-400 text-sm mt-4">
+                Platform pelacakan dan manajemen logistik pengiriman barang secara real-time.
+              </p>
+              <div class="flex gap-2">
+                <span class="px-3 py-1 border border-white/10 text-white text-[11px] uppercase bg-white/5 rounded-full"
+                  >Django</span
+                >
+                <span class="px-3 py-1 border border-white/10 text-white text-[11px] uppercase bg-white/5 rounded-full"
+                  >Postgres</span
+                >
+              </div>
+            </div>
+          </a>
         </div>
+      </div>
+
+      <div class="relative z-20">
+        <h2
+          class="font-headline text-sm font-bold tracking-[0.3em] uppercase text-primary mb-4 border-l-4 border-primary pl-4"
+        >
+          Website &amp; Landing Page
+        </h2>
+        <p class="text-zinc-600 max-w-full text-l mx-auto md:mx-0 relative z-10 mb-6">
+          Website dan landing page dirancang dengan pendekatan yang menyesuaikan karakter serta tujuan penggunaannya.
+          Mulai dari penyampaian informasi hingga kebutuhan konversi, setiap elemen disusun secara terarah dan
+          proporsional. Dengan memperhatikan detail tampilan, struktur konten, serta performa, kami memastikan hasil
+          akhir yang tidak hanya representatif, tetapi juga nyaman digunakan di berbagai perangkat. Selain dari pada itu
+          adalah mampu mendukung kebutuhan Anda secara berkelanjutan.
+        </p>
+        <div class="grid grid-cols-1 gap-12">
+          <a
+            href="https://cantilever-lovat.vercel.app/"
+            target="_blank"
+            class="portfolio-card group overflow-hidden rounded-sm block"
+          >
+            <div class="aspect-video bg-zinc-900 overflow-hidden">
+              <img
+                src="img/cantilever.webp"
+                alt="Cantilever"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
+              />
+            </div>
+            <div class="p-8 flex flex-col md:flex-row justify-between md:items-center gap-4">
+              <div>
+                <span class="text-[11px] uppercase tracking-widest text-primary font-bold"
+                  >Featured Project // Corporate</span
+                >
+                <h3 class="text-3xl md:text-4xl font-headline font-bold mt-2 text-white">
+                  Cantilever Group Kontraktor
+                </h3>
+              </div>
+              <!-- <div class="flex gap-2">
+                <span class="px-3 py-1 border border-white/10 text-white text-[11px] uppercase bg-white/5 rounded-full"
+                  >Tailwind CSS</span
+                >
+                <span class="px-3 py-1 border border-white/10 text-white text-[11px] uppercase bg-white/5 rounded-full"
+                  >UI/UX Design</span
+                >
+              </div> -->
+            </div>
+          </a>
+
+          <a
+            href="https://cqj-five.vercel.app/blueprint/"
+            target="_blank"
+            class="portfolio-card group overflow-hidden rounded-sm block"
+          >
+            <div class="aspect-video bg-zinc-900 overflow-hidden">
+              <img
+                src="img/cqj.webp"
+                alt="PCQJ"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
+              />
+            </div>
+            <div class="p-8">
+              <span class="text-[11px] uppercase tracking-widest text-primary font-bold">Situs Boarding School</span>
+              <h3 class="text-3xl font-headline font-bold mt-2 text-white">Pondok Cahaya Qur'an Jamprong</h3>
+            </div>
+          </a>
+
+          <a
+            href="https://cintacake.vercel.app/"
+            target="_blank"
+            class="portfolio-card group overflow-hidden rounded-sm block"
+          >
+            <div class="aspect-video bg-zinc-900 overflow-hidden">
+              <img
+                src="img/cintacake.webp"
+                alt="Cinta Cake"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
+              />
+            </div>
+            <div class="p-8">
+              <span class="text-[11px] uppercase tracking-widest text-primary font-bold">E-Commerce / Catalog</span>
+              <h3 class="text-3xl font-headline font-bold mt-2 text-white">Cinta Cake</h3>
+            </div>
+          </a>
+
+          <a
+            href="https://puskab-demo.vercel.app/"
+            target="_blank"
+            class="portfolio-card group overflow-hidden rounded-sm block"
+          >
+            <div class="aspect-video bg-zinc-900 overflow-hidden">
+              <img
+                src="img/puskab.webp"
+                alt="Puskab"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
+              />
+            </div>
+            <div class="p-8">
+              <span class="text-[11px] uppercase tracking-widest text-primary font-bold">Institutional</span>
+              <h3 class="text-3xl font-headline font-bold mt-2 text-white">Puskab System</h3>
+            </div>
+          </a>
+
+          <a
+            href="https://sppgbojonegoro.vercel.app/"
+            target="_blank"
+            class="portfolio-card group overflow-hidden rounded-sm block"
+          >
+            <div class="aspect-video bg-zinc-900 overflow-hidden">
+              <img
+                src="img/sppgbjn.webp"
+                alt="SPPG"
+                class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-1000 opacity-90 group-hover:opacity-100"
+              />
+            </div>
+            <div class="p-8">
+              <span class="text-[11px] uppercase tracking-widest text-primary font-bold">Community</span>
+              <h3 class="text-3xl font-headline font-bold mt-2 text-white">SPPG Bojonegoro</h3>
+            </div>
+          </a>
+        </div>
+      </div>
     </main>
 
-    <footer class="relative z-10 py-12 bg-dark text-white text-center border-t border-black/5">
-        <p class="text-gray-500 text-xs tracking-widest uppercase font-headline">© 2026 ZEZDEV DIGITAL AGENCY // ALL SIGNAL RESERVED</p>
+    <!-- <footer class="relative z-10 py-12 bg-dark text-white text-center border-t border-black/5">
+      <p class="text-gray-500 text-xs tracking-widest uppercase font-headline">
+        © 2026 ZEZDEV DIGITAL AGENCY // ALL SIGNAL RESERVED
+      </p>
+    </footer> -->
+    <footer class="relative bg-dark text-white py-12 px-8">
+      <div
+        class="absolute top-0 left-0 w-full h-[8px] bg-gradient-to-r from-[#1a1a1a] via-[#470015] via-[#db0335] via-[#470015] to-[#1a1a1a]"
+      ></div>
+      <!-- <div
+        class="absolute top-0 left-0 w-full h-[8px] bg-gradient-to-r from-[#470015] via-[#db0335] to-[#6b011a]"
+      ></div> -->
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="font-black text-2xl font-headline italic">ZEZDEV</div>
+        <span class="text-gray-400 text-xs font-body"
+          >M Arif Zein • Solusi Digital • Web Designer • Web App Developer • Custom System</span
+        >
+        <div class="text-gray-400 text-xs font-body">© 2026 ZezDev</div>
+        <div class="flex gap-6">
+          <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+          <a
+            href="https://wa.me/6285330048180?text=Halo%20saya%20ingin%20dibuatkan%20website%20"
+            class="text-gray-400 hover:text-white"
+            >WhatsApp</a
+          >
+        </div>
+      </div>
     </footer>
-
-</body>
+  </body>
 </html>

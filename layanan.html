@@ -81,39 +81,92 @@
     </style>
   </head>
   <body class="bg-surface text-zinc-900 font-body antialiased relative">
-    <div></div>
-
-    <nav class="fixed top-0 w-full z-50 bg-[#db0335] shadow-lg px-6 py-4 flex justify-between items-center relative">
+    <nav class="fixed top-0 w-full z-50 bg-[#db0335] shadow-lg px-6 py-4 flex justify-between items-center">
       <a href="/" class="text-2xl font-black tracking-tighter text-white font-headline">ZEZDEV</a>
-      <div class="hidden md:flex gap-8 items-center font-headline uppercase text-xs font-bold text-white/90">
-        <a href="/" class="hover:text-white transition-colors">Beranda</a>
-        <a href="/layanan" class="hover:text-white transition-colors border-b-2 border-white pb-1">Layanan</a>
-        <a href="/portofolio" class="hover:text-white transition-colors">Portofolio</a>
-        <a href="https://wa.me/6285330048180" class="bg-white text-primary px-5 py-2 rounded-sm font-black"
-          >Hubungi Kami</a
+
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-4 items-center font-headline uppercase text-[11px] font-bold">
+        <a href="/" class="relative px-5 py-1.5 bg-white text-[#db0335] flex items-center justify-center">
+          <span class="relative z-10">Beranda</span>
+        </a>
+
+        <a
+          href="/layanan"
+          class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center"
         >
+          <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
+            >Layanan</span
+          >
+          <span
+            class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
+          ></span>
+        </a>
+
+        <a
+          href="/portofolio"
+          class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center"
+        >
+          <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
+            >Portofolio</span
+          >
+          <span
+            class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
+          ></span>
+        </a>
+
+        <a href="/about" class="relative px-5 py-1.5 text-white overflow-hidden group flex items-center justify-center">
+          <span class="relative z-10 group-hover:text-[#db0335] transition-colors duration-300 ease-in-out"
+            >Tentang</span
+          >
+          <span
+            class="absolute top-full left-0 w-full h-full bg-white group-hover:top-0 transition-all duration-300 ease-out"
+          ></span>
+        </a>
+        <a
+          href="https://wa.me/6285330048180?text=Halo%20ZezDev,%20saya%20tertarik%20ingin%20diskusi..."
+          target="_blank"
+          class="ml-2 bg-zinc-900 text-[#ffffff] px-5 py-2 font-black rounded-sm hover:text-[#db0335] transition-all active:scale-95"
+        >
+          Kontak
+        </a>
       </div>
+      <div
+        class="absolute bottom-0 left-0 w-full h-[8px] bg-gradient-to-r from-[#db0335] via-[#1a1a1a] to-[#db0335]"
+      ></div>
+      <!-- Hamburger -->
+      <button id="hamburger" class="md:hidden text-white text-xl focus:outline-none leading-none">☰</button>
     </nav>
 
-    <main class="relative z-10 pt-32 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
+    <main class="relative z-10 pt-12 pb-24 px-6 md:px-8 max-w-7xl mx-auto">
       <div class="mb-20 text-center md:text-left">
-        <span class="font-headline text-xs font-bold tracking-[0.3em] uppercase text-primary mb-3 block"
-          >Service Architectures</span
-        >
-        <h1 class="font-headline font-black text-5xl md:text-7xl uppercase tracking-tighter leading-none mb-6">
-          Paket Terukur untuk <br />
-          <span class="text-primary glow-red">Pertumbuhan Optimal.</span>
+        <span class="font-headline text-xs font-bold tracking-[0.3em] uppercase text-primary mb-3 block">
+          <!-- Service Architectures -->
+          SOLUSI DIGITAL
+        </span>
+        <h1 class="font-headline font-black text-5xl md:text-7xl uppercase leading-none mb-6 mt-12">
+          Fondasi Digital untuk <br />
+          <span class="text-primary glow-red">Pertumbuhan Bisnis Anda.</span>
+          <!-- Paket Terukur untuk <br />
+          <span class="text-primary glow-red">Pertumbuhan Optimal.</span> -->
         </h1>
+
+        <p>
+          Website bukan sekadar tampilan online. Ia adalah representasi bisnis Anda — bagaimana Anda dilihat, dipercaya,
+          dan dipilih. Kami merancang website yang tidak hanya indah secara visual, tetapi juga: Terstruktur dengan
+          jelas Nyaman diakses di berbagai perangkat Mendukung perjalanan calon klien dari melihat hingga percaya
+          Pendekatan kami sederhana: desain yang tepat, fungsi yang relevan, dan pengalaman yang berkesan.
+        </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-2 bg-zinc-200 p-2 rounded-sm overflow-hidden">
         <div class="pricing-card bg-dark p-10 flex flex-col h-full relative group">
           <div class="mb-8">
             <span class="text-primary font-bold text-[10px] uppercase tracking-widest">Startup // Entry</span>
-            <h3 class="text-3xl font-headline font-bold text-white mt-2">Basic Landing</h3>
+            <h3 class="text-3xl font-headline font-bold text-white mt-2">Basic Landing<br />&nbsp;</h3>
           </div>
 
           <div class="mb-10">
+            <p class="text-zinc-500 text-[10px] mt-1 tracking-widest uppercase">&nbsp;</p>
             <span class="text-4xl font-headline font-bold text-white">Rp 1.5jt</span>
             <p class="text-zinc-500 text-[10px] mt-1 tracking-widest uppercase">Estimasi 2-4 Hari</p>
           </div>
@@ -126,7 +179,10 @@
               <span class="material-symbols-outlined text-primary">code</span> Desain Custom
             </div>
             <div class="flex items-center gap-3 text-zinc-300 text-sm">
-              <span class="material-symbols-outlined text-primary">bolt</span> Optimasi Kecepatan
+              <span class="material-symbols-outlined text-primary">bolt</span> Optimasi Performa
+            </div>
+            <div class="flex items-center gap-3 text-zinc-300 text-sm">
+              <span class="material-symbols-outlined text-primary">mail</span> Email Domain
             </div>
           </div>
 
@@ -141,11 +197,12 @@
           <div class="absolute top-0 right-0 bg-primary text-white text-[12px] px-3 py-1 uppercase">Best Seller</div>
           <div class="mb-8">
             <span class="text-primary font-bold text-[10px] uppercase tracking-widest">Business // Pro</span>
-            <h3 class="text-3xl font-headline font-bold text-white mt-2">Company Profile</h3>
+            <h3 class="text-3xl font-headline font-bold text-white mt-2">Company Profile<br />&nbsp;</h3>
           </div>
 
           <div class="mb-10">
-            <span class="text-4xl font-headline font-bold text-white">Rp 2.5jt</span>
+            <p class="text-zinc-500 text-[10px] mt-1 tracking-widest uppercase">&nbsp;</p>
+            <span class="text-4xl font-headline font-bold text-white">Rp 2,5jt</span>
             <p class="text-zinc-500 text-[10px] mt-1 tracking-widest uppercase">Estimasi 3-5 Hari</p>
           </div>
 
@@ -153,8 +210,11 @@
             <div class="flex items-center gap-3 text-sm">
               <span class="material-symbols-outlined text-primary">stacks</span> 5–6 Halaman Lengkap
             </div>
+            <div class="flex items-center gap-3 text-zinc-300 text-sm">
+              <span class="material-symbols-outlined text-primary">code</span> Desain Custom
+            </div>
             <div class="flex items-center gap-3 text-sm">
-              <span class="material-symbols-outlined text-primary">speed</span> Optimal Tanpa Plugin Berat
+              <span class="material-symbols-outlined text-primary">speed</span> Optimasi Performa
             </div>
             <div class="flex items-center gap-3 text-sm">
               <span class="material-symbols-outlined text-primary">search</span> SEO Dasar Terintegrasi
@@ -174,15 +234,26 @@
         <div class="pricing-card bg-dark p-10 flex flex-col h-full relative group">
           <div class="mb-8">
             <span class="text-primary font-bold text-[10px] uppercase tracking-widest">E-commerce // Enterprise</span>
-            <h3 class="text-3xl font-headline font-bold text-white mt-2">Custom System</h3>
+            <h3 class="text-3xl font-headline font-bold text-white mt-2">
+              <!-- E-Commerce &nbsp;&nbsp;&nbsp;&nbsp;Order-Payment -->
+              <div>E-Commerce</div>
+              <div>Order &amp; Payment</div>
+            </h3>
           </div>
 
           <div class="mb-10">
-            <span class="text-4xl font-headline font-bold text-white">IDR 5jt</span>
+            <p class="text-zinc-500 text-[10px] mt-1 tracking-widest uppercase">Start</p>
+            <span class="text-4xl font-headline font-bold text-white">IDR 4,5jt</span>
             <p class="text-zinc-500 text-[10px] mt-1 tracking-widest uppercase">Waktu Menyesuaikan</p>
           </div>
 
           <div class="flex-grow space-y-4 mb-12 data-trace ml-4">
+            <div class="flex items-center gap-3 text-zinc-300 text-sm">
+              <span class="material-symbols-outlined text-primary">code</span> Desain Custom
+            </div>
+            <div class="flex items-center gap-3 text-zinc-300 text-sm">
+              <span class="material-symbols-outlined text-primary">speed</span> Optimasi Performa
+            </div>
             <div class="flex items-center gap-3 text-zinc-300 text-sm">
               <span class="material-symbols-outlined text-primary">shopping_cart</span> E-Commerce / Katalog
             </div>
@@ -191,6 +262,9 @@
             </div>
             <div class="flex items-center gap-3 text-zinc-300 text-sm">
               <span class="material-symbols-outlined text-primary">database</span> Database Scalable
+            </div>
+            <div class="flex items-center gap-3 text-zinc-300 text-sm">
+              <span class="material-symbols-outlined text-primary">mail</span> Email Domain
             </div>
           </div>
 
@@ -216,10 +290,33 @@
       </div>
     </main>
 
-    <footer class="py-12 bg-dark text-white text-center">
+    <!-- <footer class="py-12 bg-dark text-white text-center">
       <p class="text-[10px] tracking-[0.4em] uppercase opacity-50 font-headline">
         © 2026 ZEZDEV // ENGINEERED FOR PRECISION
       </p>
+    </footer> -->
+    <footer class="relative bg-dark text-white py-12 px-8">
+      <div
+        class="absolute top-0 left-0 w-full h-[8px] bg-gradient-to-r from-[#1a1a1a] via-[#470015] via-[#db0335] via-[#470015] to-[#1a1a1a]"
+      ></div>
+      <!-- <div
+        class="absolute top-0 left-0 w-full h-[8px] bg-gradient-to-r from-[#470015] via-[#db0335] to-[#6b011a]"
+      ></div> -->
+      <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="font-black text-2xl font-headline italic">ZEZDEV</div>
+        <span class="text-gray-400 text-xs font-body"
+          >M Arif Zein • Solusi Digital • Web Designer • Web App Developer • Custom System</span
+        >
+        <div class="text-gray-400 text-xs font-body">© 2026 ZezDev</div>
+        <div class="flex gap-6">
+          <a href="#" class="text-gray-400 hover:text-white">Instagram</a>
+          <a
+            href="https://wa.me/6285330048180?text=Halo%20saya%20ingin%20dibuatkan%20website%20"
+            class="text-gray-400 hover:text-white"
+            >WhatsApp</a
+          >
+        </div>
+      </div>
     </footer>
   </body>
 </html>
