@@ -6,31 +6,20 @@
     <title>Pricing & Solutions | ZezDev - Solusi Digital Terukur</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Outfit:wght@100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
+    <!-- 
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    /> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
       rel="stylesheet"
     />
-    <script id="tailwind-config">
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#db0335",
-              subprime: "#605B51",
-              dark: "#0a0a0a", // Hitam untuk kartu
-              surface: "#ffffff", // Latar halaman
-            },
-            fontFamily: {
-              headline: ["Outfit"],
-              body: ["Inter"],
-            },
-          },
-        },
-      };
-    </script>
+    <script src="tailwind-cfg.js"></script>
+    <script src="script.js" defer></script>
     <style>
       .bg-dots {
         background-color: #ffffff;
@@ -199,7 +188,7 @@
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-2 bg-zinc-200 p-2 rounded-sm overflow-hidden">
-        <div class="pricing-card bg-dark p-10 flex flex-col h-full relative group">
+        <div class="pricing-card bg-cardDark p-10 flex flex-col h-full relative group">
           <div class="mb-8">
             <span class="text-primary font-bold text-[10px] uppercase tracking-widest">Startup // Entry</span>
             <h3 class="text-3xl font-headline font-bold text-white mt-2">Basic Landing<br />&nbsp;</h3>
@@ -271,7 +260,7 @@
           >
         </div>
 
-        <div class="pricing-card bg-dark p-10 flex flex-col h-full relative group">
+        <div class="pricing-card bg-cardDark p-10 flex flex-col h-full relative group">
           <div class="mb-8">
             <span class="text-primary font-bold text-[10px] uppercase tracking-widest">E-commerce // Enterprise</span>
             <h3 class="text-3xl font-headline font-bold text-white mt-2">
@@ -335,7 +324,7 @@
         © 2026 ZEZDEV // ENGINEERED FOR PRECISION
       </p>
     </footer> -->
-    <footer class="relative bg-dark text-white py-12 px-8">
+    <footer class="relative bg-cardDark text-white py-12 px-8">
       <div
         class="absolute top-0 left-0 w-full h-[8px] bg-gradient-to-r from-[#1a1a1a] via-[#470015] via-[#db0335] via-[#470015] to-[#1a1a1a]"
       ></div>
@@ -358,25 +347,5 @@
         </div>
       </div>
     </footer>
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const sideMenu = document.getElementById("sideMenu");
-      const closeMenu = document.getElementById("closeMenu");
-
-      hamburger.addEventListener("click", () => {
-        sideMenu.style.left = "0";
-      });
-
-      closeMenu.addEventListener("click", () => {
-        sideMenu.style.left = "-100%";
-      });
-
-      // Close menu when clicking menu item
-      document.querySelectorAll("#sideMenu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          sideMenu.style.left = "-100%";
-        });
-      });
-    </script>
   </body>
 </html>

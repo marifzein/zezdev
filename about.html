@@ -5,24 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Tentang - ZezDev</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#db0335",
-              dark: "#0a0a0a",
-            },
-            fontFamily: {
-              headline: ["Inter", "sans-serif"],
-              body: ["Roboto", "sans-serif"],
-            },
-          },
-        },
-      };
-    </script>
+    <script src="tailwind-cfg.js"></script>
+    <script src="script.js" defer></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
     <style>
-      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Roboto:wght@300;400&display=swap");
       .bg-dark {
         background-color: #0a0a0a;
       }
@@ -195,7 +184,7 @@
       </div>
     </section>
 
-    <footer class="relative bg-dark text-white py-12 px-8">
+    <footer class="relative bg-cardDark text-white py-12 px-8">
       <div
         class="absolute top-0 left-0 w-full h-[8px] bg-gradient-to-r from-black via-[#470015] via-[#db0335] via-[#470015] to-black"
       ></div>
@@ -215,25 +204,5 @@
         </div>
       </div>
     </footer>
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const sideMenu = document.getElementById("sideMenu");
-      const closeMenu = document.getElementById("closeMenu");
-
-      hamburger.addEventListener("click", () => {
-        sideMenu.style.left = "0";
-      });
-
-      closeMenu.addEventListener("click", () => {
-        sideMenu.style.left = "-100%";
-      });
-
-      // Close menu when clicking menu item
-      document.querySelectorAll("#sideMenu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          sideMenu.style.left = "-100%";
-        });
-      });
-    </script>
   </body>
 </html>

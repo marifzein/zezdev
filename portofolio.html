@@ -5,28 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portofolio | ZezDev - Solusi Digital Modern</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
+    <!-- <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
+    /> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Poppins:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
     />
-    <script id="tailwind-config">
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              primary: "#db0335", // Merah ZezDev
-              dark: "#1a1a1a", // Teks abu-abu pekat (untuk latar terang)
-              cardDark: "#0a0a0a", // Hitam pekat untuk kartu
-              surface: "#ffffff", // Latar halaman putih
-            },
-            fontFamily: {
-              headline: ["Outfit"],
-              body: ["Inter"],
-            },
-          },
-        },
-      };
-    </script>
+    <script src="tailwind-cfg.js"></script>
+    <script src="script.js" defer></script>
     <style>
       /* Efek Dot Matrix Pattern (Putih dengan Titik Hitam) */
       .bg-dots {
@@ -464,25 +452,5 @@
         </div>
       </div>
     </footer>
-    <script>
-      const hamburger = document.getElementById("hamburger");
-      const sideMenu = document.getElementById("sideMenu");
-      const closeMenu = document.getElementById("closeMenu");
-
-      hamburger.addEventListener("click", () => {
-        sideMenu.style.left = "0";
-      });
-
-      closeMenu.addEventListener("click", () => {
-        sideMenu.style.left = "-100%";
-      });
-
-      // Close menu when clicking menu item
-      document.querySelectorAll("#sideMenu a").forEach((link) => {
-        link.addEventListener("click", () => {
-          sideMenu.style.left = "-100%";
-        });
-      });
-    </script>
   </body>
 </html>
